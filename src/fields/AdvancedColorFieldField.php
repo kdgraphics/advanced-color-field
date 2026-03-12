@@ -9,9 +9,11 @@ use craft\base\Field;
 use craft\base\InlineEditableFieldInterface;
 use craft\base\MergeableFieldInterface;
 use craft\helpers\Html;
+use GraphQL\Type\Definition\Type;
 use KdGraphics\AdvancedColorField\assetbundles\InputAssetBundle;
 use KdGraphics\AdvancedColorField\assetbundles\SettingsAssetBundle;
 use KdGraphics\AdvancedColorField\fields\data\AdvancedColorFieldData;
+use KdGraphics\AdvancedColorField\gql\types\generators\AdvancedColorDataType;
 use yii\db\Schema;
 
 class AdvancedColorFieldField extends Field implements InlineEditableFieldInterface, MergeableFieldInterface, CrossSiteCopyableFieldInterface
@@ -36,6 +38,20 @@ class AdvancedColorFieldField extends Field implements InlineEditableFieldInterf
     public static function dbType(): string
     {
         return sprintf('%s(9)', Schema::TYPE_CHAR);
+    }
+
+    public function getContentGqlType(): Type|array
+    {
+        return AdvancedColorDataType::generateType($this);
+    }
+
+    public function getContentGqlMutationArgumentType(): Type|array
+    {
+        return [
+            'name' => $this->handle,
+            'type' => Type::string(),
+            'description' => $this->instructions,
+        ];
     }
 
     public function normalizeValue(mixed $value, ?ElementInterface $element): mixed

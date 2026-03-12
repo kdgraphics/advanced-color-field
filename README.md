@@ -29,12 +29,15 @@ A standalone Craft CMS field type that stores color + alpha and provides a moder
 - PHP `^8.2`
 - Craft CMS `^5.0`
 
-## Installation (local plugin)
+## Installation
 
-1. Ensure the plugin exists at `plugins/advanced-color-field`.
-2. Add path repository + require in your site `composer.json` if needed.
-3. Run composer install/update.
-4. Install plugin from Craft CP or CLI:
+Install via Composer:
+
+```bash
+composer require kdgraphics/advanced-color-field:^1.0
+```
+
+Then install the plugin in Craft:
 
 ```bash
 php craft plugin/install advanced-color-field
