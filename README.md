@@ -13,16 +13,16 @@ A standalone Craft CMS field type that stores color + alpha and provides a moder
 ## Screenshots
 
 ### 1. Adding the field
-![Adding the field](screenshots/screenshot-1-adding-the-field.png)
+<img src="screenshots/screenshot-1-adding-the-field.png" alt="Adding the field" width="900" />
 
 ### 2. Adding custom swatches
-![Adding custom swatches](screenshots/screenshot-2-adding-custom-swatches.png)
+<img src="screenshots/screenshot-2-adding-custom-swatches.png" alt="Adding custom swatches" width="420" />
 
 ### 3. Field in CP frontend
-![Field in CP frontend](screenshots/screenshot-3-field-in-cp-frontend.png)
+<img src="screenshots/screenshot-3-field-in-cp-frontend.png" alt="Field in CP frontend" width="360" />
 
 ### 4. Color picker modal
-![Color picker modal](screenshots/screenshot-4-color-picker-modal.png)
+<img src="screenshots/screenshot-4-color-picker-modal.png" alt="Color picker modal" width="240" />
 
 ## Requirements
 

@@ -5,9 +5,8 @@
   "version": "1.0.0",
   "authors": [
     {
-      "name": "Kuladeep Das",
-      "email": "kuladeep@example.com",
-      "homepage": "https://example.com"
+      "name": "KDGraphics",
+      "email": "mail.kdgraphics@gmail.com"
     }
   ],
   "require": {
@@ -22,9 +21,7 @@
   "extra": {
     "name": "Advanced color field",
     "handle": "advanced-color-field",
-    "class": "KdGraphics\\AdvancedColorField\\AdvancedColorField",
-    "icon": "src/icon.svg",
-    "icon-mask": "src/icon-mask.svg"
+    "class": "KdGraphics\\AdvancedColorField\\AdvancedColorField"
   },
   "archive": {
     "exclude": [
