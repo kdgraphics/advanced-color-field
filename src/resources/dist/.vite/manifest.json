@@ -1,0 +1,20 @@
+{
+  "src/resources/src/input/main.js": {
+    "file": "input.js",
+    "name": "input",
+    "src": "src/resources/src/input/main.js",
+    "isEntry": true,
+    "css": [
+      "input.css"
+    ]
+  },
+  "src/resources/src/settings/main.js": {
+    "file": "settings.js",
+    "name": "settings",
+    "src": "src/resources/src/settings/main.js",
+    "isEntry": true,
+    "css": [
+      "settings.css"
+    ]
+  }
+}

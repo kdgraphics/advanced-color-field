@@ -1,0 +1,36 @@
+{
+  "name": "kdgraphics/advanced-color-field",
+  "description": "Advanced Color Field for Craft CMS.",
+  "type": "craft-plugin",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Kuladeep Das",
+      "email": "kuladeep@example.com",
+      "homepage": "https://example.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "craftcms/cms": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KdGraphics\\AdvancedColorField\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Advanced color field",
+    "handle": "advanced-color-field",
+    "class": "KdGraphics\\AdvancedColorField\\AdvancedColorField",
+    "icon": "src/icon.svg",
+    "icon-mask": "src/icon-mask.svg"
+  },
+  "archive": {
+    "exclude": [
+      "/screenshots",
+      "/screenshots/**"
+    ]
+  },
+  "license": "proprietary"
+}

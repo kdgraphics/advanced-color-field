@@ -1,0 +1,18 @@
+<div id="customSwatches-field" class="field" data-advanced-color-field-settings>
+  <div class="heading">
+    <label id="customSwatches-label">{{ 'Custom swatches'|t('advanced-color-field') }}</label>
+  </div>
+  <div class="instructions">
+    <p>{{ 'Add one or more swatches. These will appear in the field picker.'|t('advanced-color-field') }}</p>
+  </div>
+
+  <div class="input ltr">
+    <textarea id="customSwatches" name="customSwatches" class="visually-hidden" data-swatches-hidden>{{ field.customSwatches ?? '' }}</textarea>
+
+    <div class="acf-settings-swatches" data-swatch-list></div>
+
+    <button type="button" class="btn dashed add icon" data-add-swatch>
+      <span class="label">{{ 'Add swatch'|t('advanced-color-field') }}</span>
+    </button>
+  </div>
+</div>

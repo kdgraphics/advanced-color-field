@@ -1,0 +1,105 @@
+{% set initialHex = (hex ?? '#000000')|lower %}
+{% set initialAlpha = (opacity ?? 100)|number_format(0, '.', '') %}
+{% set swatches = swatches ?? [] %}
+
+<div id="{{ id }}-alpha-field" class="acf-color-field">
+  <input type="hidden" name="{{ name }}[color]" value="{{ initialHex }}" data-color-hidden>
+  <input type="hidden" name="{{ name }}[alpha]" value="{{ initialAlpha }}" data-alpha-hidden>
+
+  <div class="acf-color-inline">
+    <button type="button" class="acf-swatch-btn" data-picker-toggle aria-label="{{ 'Open color picker'|t('app') }}">
+      <span class="acf-swatch" data-color-swatch></span>
+    </button>
+
+    <div class="acf-inline-value-stack">
+      <div class="acf-inline-channel-grid" data-inline-channel-grid>
+        <div class="acf-inline-channel" data-inline-cwrap="1">
+          <input type="text" class="text ltr fullwidth color-input" data-inline-cinput="1">
+          <span data-inline-clabel="1">HEX</span>
+        </div>
+        <div class="acf-inline-channel" data-inline-cwrap="2">
+          <input type="text" class="text ltr fullwidth color-input" data-inline-cinput="2">
+          <span data-inline-clabel="2"></span>
+        </div>
+        <div class="acf-inline-channel" data-inline-cwrap="3">
+          <input type="text" class="text ltr fullwidth color-input" data-inline-cinput="3">
+          <span data-inline-clabel="3"></span>
+        </div>
+        <div class="acf-inline-channel" data-inline-cwrap="4">
+          <input type="text" class="text ltr fullwidth color-input" data-inline-cinput="4">
+          <span data-inline-clabel="4"></span>
+        </div>
+      </div>
+    </div>
+    <div class="acf-mode-switch acf-inline-mode-switch">
+      <button type="button" data-mode-prev aria-label="{{ 'Previous color mode'|t('app') }}">
+        <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 8l4-4 4 4"/></svg>
+      </button>
+      <button type="button" data-mode-next aria-label="{{ 'Next color mode'|t('app') }}">
+        <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="acf-picker" data-picker-pop hidden>
+    <div class="acf-sv" data-sv-wrap>
+      <div class="acf-sv-white"></div>
+      <div class="acf-sv-black"></div>
+      <span class="acf-handle" data-sv-handle></span>
+    </div>
+
+    <div class="acf-row acf-row1">
+      <button type="button" class="acf-eye-btn" data-eyedropper title="{{ 'Pick color from screen'|t('app') }}" aria-label="{{ 'Pick color from screen'|t('app') }}">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M15.23 2.99L12.24 0L8.98 3.26L7.25 1.53L6.28 2.5L7.49 3.71L0 11.21V15.23H4.02L11.52 7.73L12.73 8.94L13.7 7.97L11.97 6.24L15.23 2.98V2.99ZM3.2 13.52L1.71 12.03L8.51 5.23L10 6.72L3.2 13.52Z" fill="black"/>
+        </svg>
+      </button>
+      <span class="acf-preview-dot" data-preview-dot></span>
+      <div class="acf-slider-stack">
+        <input type="range" min="0" max="360" step="1" data-hue class="acf-hue-slider">
+        <input type="range" min="0" max="100" step="1" data-alpha class="acf-alpha-slider">
+      </div>
+    </div>
+
+    <div class="acf-row acf-row2">
+      <div class="acf-value-stack">
+        <div class="acf-channel-grid" data-channel-grid>
+          <div class="acf-channel" data-cwrap="1">
+            <input type="text" class="text ltr fullwidth color-input" data-cinput="1">
+            <span data-clabel="1">HEX</span>
+          </div>
+          <div class="acf-channel" data-cwrap="2">
+            <input type="text" class="text ltr fullwidth color-input" data-cinput="2">
+            <span data-clabel="2"></span>
+          </div>
+          <div class="acf-channel" data-cwrap="3">
+            <input type="text" class="text ltr fullwidth color-input" data-cinput="3">
+            <span data-clabel="3"></span>
+          </div>
+          <div class="acf-channel" data-cwrap="4">
+            <input type="text" class="text ltr fullwidth color-input" data-cinput="4">
+            <span data-clabel="4"></span>
+          </div>
+        </div>
+      </div>
+      <div class="acf-mode-switch">
+        <button type="button" data-mode-prev aria-label="{{ 'Previous color mode'|t('app') }}">
+          <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 8l4-4 4 4"/></svg>
+        </button>
+        <button type="button" data-mode-next aria-label="{{ 'Next color mode'|t('app') }}">
+          <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    {% if swatches|length %}
+      <div class="acf-swatches-wrap">
+        <div class="acf-swatches" data-swatches>
+          {% for swatchColor in swatches %}
+            <button type="button" class="acf-swatch-item" data-swatch="{{ swatchColor|lower }}" aria-label="{{ 'Use swatch {color}'|t('advanced-color-field', { color: swatchColor }) }}"></button>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
