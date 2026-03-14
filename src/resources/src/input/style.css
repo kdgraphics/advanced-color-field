@@ -53,6 +53,7 @@
   border-radius: 999px;
   background: transparent;
   cursor: pointer;
+  border: var(--input-border);
 }
 
 .acf-swatch {
@@ -141,6 +142,7 @@
   height: 34px;
   border-radius: 999px;
   flex: 0 0 auto;
+  border: var(--input-border);
 }
 
 .acf-slider-stack {
@@ -158,7 +160,8 @@
   border-radius: 4px;
   margin: 0;
   padding: 0;
-  background: transparent;
+  background-size: 5px 5px;
+  background-image: repeating-conic-gradient(#ccc 0% 25%, #fff 0% 50%);
   overflow: visible;
 }
 
@@ -249,7 +252,7 @@
   min-height: unset;
   background: transparent;
   color: inherit;
-  border: 1px solid #C7C7C7;
+  border: var(--input-border);
   border-radius: 4px;
   text-align: center;
   font-size: 13px !important;

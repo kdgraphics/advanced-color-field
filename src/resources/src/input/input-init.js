@@ -37,7 +37,7 @@ export function initInput(root) {
   const cLabel2 = root.querySelector('[data-clabel="2"]');
   const cLabel3 = root.querySelector('[data-clabel="3"]');
   const cLabel4 = root.querySelector('[data-clabel="4"]');
-  const modalChannelGrid = pop.querySelector('[data-channel-grid]');
+  const modalChannelGrid = pop?.querySelector('[data-channel-grid]');
   const modePrevButtons = root.querySelectorAll('[data-mode-prev]');
   const modeNextButtons = root.querySelectorAll('[data-mode-next]');
   const swatchButtons = root.querySelectorAll('[data-swatch]');
